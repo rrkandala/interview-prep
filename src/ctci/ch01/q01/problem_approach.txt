@@ -1,0 +1,13 @@
+1.1 Is Unique: Implement an algorithm to determine whether a string has all unique characters.
+    What if you can't use additional data structures?
+
+- My approach to this problem
+    - Make a boolean array of size 128 (size of ASCII chars)
+    - Go through each character of the string in a loop, define the integer location of each char in
+      boolean array, check if the location in the array is true. If the spot is true, there are more
+      than one character that is same as the other. Therefore, it's not all unique characters.
+      Return false if it's true.
+    - Each time going through a character, make sure to mark in the boolean array that we have the
+      character.
+    - After going through the whole array, we made sure that there was no duplicates in any
+      character, so we can return true.

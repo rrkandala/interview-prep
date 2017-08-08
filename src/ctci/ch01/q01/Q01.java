@@ -1,4 +1,4 @@
-package ctci.ch01;
+package ctci.ch01.q01;
 
 /**
  * Created by izzymoriguchi on 8/8/17.
