@@ -1,0 +1,37 @@
+- Problem: Set Matrix Zeros
+	- Given an m x n matrix of 0s and 1s, if an element is 0, set its entire row and column to 0.Do it in place.
+- Example
+	- Given array A as
+		1 0 1
+		1 1 1
+		1 1 1
+	  On returning, the array A should be :
+	  	0 0 0
+		1 0 1
+		1 0 1
+
+- My approach to solve this problem
+	- Make two int array to keep track of where in row and col there exists 0s.
+	- loop through the length of tbe 0s, and inside the loop,
+	- Going through the 2D array, if I find 0, from the point change the rows and cols values to 1
+	- This approach takes O(M * N) for time complexity, and O(M * N) space complexity since I'm
+	creating separate array, and in the worst case the array fills up fill (M * N).
+
+- My second approach to this problem to improve the space complexity
+	- Define two boolean value R for row, C for column.
+	- Go through the first row and first column, and set R true if all the numbers in the first
+	column are 1s, and set R to be false if there is any 0 in the first row. Similarly, set C to be
+	 true if all the numbers in the first column are 1s, and otherwise(find 0 in the first col)
+	 set C to false
+	- Going through the entire 2D array, change the first row and first column values based on
+	values in the corresponding rows and columns. That said, in the first row, go through each
+	column, and set the value at the column of the first row to 1 if all values are 1, set it to 0
+	if there is any 0. Similarly, in the first column, go through each row and set the value at
+	the row of the first column to 1 if all the values in the row are 1, set it to 0 if there is
+	any 0.
+	- After that, go through the other values in the 2D array except for the first row and col.
+	Set each value to 1 if the corresponding value in first row and first colmn are both 1. If any
+	of them is 0, set the value to 0.
+	- After setting all the value, set all the values in the first column and first row based on
+	the boolean values R and C.
+
