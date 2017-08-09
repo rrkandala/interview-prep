@@ -1,5 +1,7 @@
 # editor temporary/working/backup files
 .#*
+/test
+/out
 *.iml
 *\#*\#
 [#]*#

@@ -1,0 +1,37 @@
+- Problem: 1.4 Palindrome Permutation
+    Given a string, write a function to check if it is a permutation of a palindrome.
+    A palindrome is a word or phrase that is the same forwards and backwards. A permutation is a
+    rearrangement of letters. The palindrome does not need to be limited to just dictionary words.
+
+- Example:
+    Input: Tact Coa
+    Output: True (permutations: "taco cat", "atco eta", etc.)
+
+- My approach to solve this problem:
+    - Ignore space " ". Assuming string only contains letter (26 English letters).
+    - To see if characters of a string is a palindrome, we need to have even numbers of same
+    characters.
+    - If the string length is even, each character have to have a pair of same character, which
+    means all characters have to have even amounts.
+        - izziizzi is a palindrome whereas izzy is not a palindrome
+    - If the string length is odd, all chars except for one char in the string have to be even
+    amount
+        - aaaaa is a palindrome whereas abcag is not
+    - Check the length of string -- if it's 2 and each char is not the same, return false
+    - Go though the chars of the string, count the number of each chars using int array of size 26.
+    - when there is only one count (all chars are same), return true;
+    - When the length is even, return true if all char counts are even numbers, and return false if
+    any of the char counts is odd number.
+    - When the length is odd, go through the char counts and check the first odd count as boolean
+    and then if you find another odd count return false, otherwise true;
+
+- Time complexity of my initial solution: O(N) where N is the size of string excluding space count.
+
+- Improvements after looking at solution:
+    - No need to check whether the string length is odd or even, because when we have even length
+    in a string and its not palindrome, there has to be more than one chars that have odd count, so
+    basically I could've just used one for loop without separating the length -- this has been
+    fixed on my code
+    - Rather than using array of 128 chars to count chars, I could have made hash table to count
+     them.
+
