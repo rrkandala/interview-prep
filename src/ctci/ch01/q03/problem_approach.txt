@@ -1,0 +1,31 @@
+1.3 URLify: Write a method to replace all spaces in a string with '%20'. You may assume that the
+string has sufficient space at the end to hold the additional characters, and that you are given
+the "true" length of the string. (Note: if implementing in Java, please use a character array so
+that you can perform this operation in place)
+
+- Example
+    Input: "Mr John Smith    ", 13
+    Output: "Mr%20John%20Smith"
+
+- My approach to this problem
+    - First, count the number of spaces in the string expept for the spaces at the end.
+    - Then, calculate the length of the output string based on the number of space in the original
+    string.
+    - Create a character array for the output with the size of the length I just calculated.
+    - Then loop through the length of the string, and assign chars from original string to the array
+    when the char is not a space, and if chars are space, assign '%', '2', '0' in the array.
+    - In the loop, make sure to keep the index for the char array updated -- meaning that when we
+    have " " in the original string and assign "%20", I need to update the index to be assigned next
+    time.
+    - At the end,  convert the char array and return string.
+
+- Improvement
+    - When I see a string manipulation problem, it's more common to edit the string starting from
+    the end and working backwords. The solution solved in the same way but in backwards.
+    - In the solution, it was using the char array from the input, and then in the loop it was
+    directly changing the char array. The author suggested this way since String is immutable.
+    - Also, if we use a char array, we can deal with the additional chars at the end by --
+        if (truelength < str.length) {
+            str[trueLength] = '\0'; // This ends the array
+        }
+
