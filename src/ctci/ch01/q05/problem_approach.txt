@@ -1,0 +1,21 @@
+- Problem: 1.5 One Away
+    There are three types of edits that can be performed on strings: insert a character, remove a
+    character, or replace a character. Given two strings, write a function to check if they are one
+    edit (or zero edits) away.
+
+- Example:
+    pale, ple -> true
+    pales, pale -> true
+    pale, bale -> true
+    pale, bake -> false
+
+- My approach to solve this problem:
+    - First, check the length of two strings to see they are more than one edit away.
+    - Assuming the string as ASCII chars.
+    - Define a boolean isEdited to assign it to false initially.
+    - Define a bigger and smaller string and assign them based on the size.
+    - Go through shorter string in a loop, and if a char is different, set isEdited to true
+    - If the length of strings are different, make sure to update index of shorter string by
+    decrementing it.
+    - If we see the difference again, return false.
+    - After going though the loop we know that they are one or zero edit away.
