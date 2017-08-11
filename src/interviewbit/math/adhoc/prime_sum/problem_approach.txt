@@ -1,0 +1,43 @@
+- Problem: Prime Sum
+    Given an even number ( greater than 2 ), return two prime numbers whose sum will be equal to
+    given number.
+
+- Example:
+    Input : 4
+    Output: 2 + 2 = 4
+
+- Note:
+    - A solution will always exist. read Goldbach’s conjecture
+    - If there are more than one solutions possible, return the lexicographically smaller solution.
+
+        If [a, b] is one solution with a <= b,
+        and [c,d] is another solution with c <= d, then
+
+        [a, b] < [c, d]
+
+        If a < c OR a==c AND b < d.
+
+- My observation:
+    - prime numbers: 2,3,5,7,11,13,17, ...
+    - 4 --> 2,2
+      6 --> 3,3
+      8 --> 3,5
+      10 --> 5,5
+      12 --> 5,7
+      14 --> 7,7
+      16 --> 5,11
+      18 --> 7,11
+      20 --> 3,17
+      22 --> 11,11
+    - Notice: when N is divided by 2, we get a number x,
+        - One of the pair is less than x
+        - The other of the pair is more than x
+
+- My approach to solve this problem:
+    - Make a function to check if a given integer is a prime number.
+    - We only need to search up to the half value of N, so loop through integers from 2 to N/2,
+    and check if each integer x is prime and N - x is also prime.
+
+- Complexity:
+    - Time complexity: O(sqrt(N) * N)
+    - Space complexity: O(1)
