@@ -1,0 +1,35 @@
+- Problem: Palindrome Integer
+    Determine whether an integer is a palindrome. Do this without extra space.
+
+    A palindrome integer is an integer x for which reverse(x) = x where reverse(x) is x with its
+    digit reversed.
+    Negative numbers are not palindromic.
+
+- Example:
+    Input : 12121
+    Output : True
+
+    Input : 123
+    Output : False
+
+- My observation:
+    12121 - T
+    1221 - T
+    123123 - F
+    10001 - T
+    123 - F
+    1000021 - F
+
+    - Make sure to read the question carefully. I first thought the permutations of the integer
+    count for the palindrome and implemented the different thing.
+
+- My approach to solve this problem:
+    - Convert the int to string.
+    - Compare from outer pair in the loop.
+
+- Complexity:
+    - Time complexity: O(N) where N is the number of digits
+    - Space complexity: O(1)
+
+- Improvements and comments:
+    - I could have made a reverseString method and check to see it's same as the original string.
