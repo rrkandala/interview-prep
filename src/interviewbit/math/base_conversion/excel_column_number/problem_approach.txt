@@ -1,0 +1,45 @@
+- Problem: Excel Column Number
+    Given a column title as appears in an Excel sheet, return its corresponding column number.
+
+- Example:
+    A -> 1
+
+    B -> 2
+
+    C -> 3
+
+    ...
+
+    Z -> 26
+
+    AA -> 27
+
+    AB -> 28
+
+- My observation:
+    A - 1
+    B - 2
+    C - 3
+    Z - 26
+    AA - 27 = 26 + 1
+    AZ = 52 = 26 + 26
+    BA = 53 = 26 + 26 + 1
+    BZ = 78 = 26 + 26 + 26
+    ZA = 26*26 + 1
+    ZZ = 26*26 + 26
+    AAA = 703 = 26^2 * 1 + 26^1 * 1 + 1
+    AAZ = 26^2 * 1 + 26^1 * 1 + 26
+    ABA = 26^2 * 1 + 26^1 * 2 + 1
+    AAAA = 18279 = 26^3 * 1 + 26^2 * 1 + 26^1 * 1 + 1
+    ACAA = 19631 = 26^3 * 1 + 26^2 * 3 + 26^1 * 1 + 1
+
+- My approach to solve this problem:
+    - Make a function that convert all 26 letters with corresponding number
+    - Go through each letter in the string, convert it to number x.
+    - Put equation that sums up 26^(index from right side) * x
+        - If the string is "ABC" the "index from right side" of A, B, C are 2, 1, 0 accordingly.
+
+
+- Complexity:
+    - Time complexity: O(N) where N is the length of the string
+    - Space complexity: O(1)

@@ -2,6 +2,7 @@
 .#*
 /test
 /out
+problem_approach_template.txt
 *.iml
 *\#*\#
 [#]*#
