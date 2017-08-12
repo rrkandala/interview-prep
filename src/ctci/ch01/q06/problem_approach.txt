@@ -1,0 +1,22 @@
+- Problem: String Compression
+    Implement a method to perform basic string compression using the counts of repeated characters.
+    For example, the string aabcccccaaa would become a2b1c5a3. If the "compressed" string would not
+    become smaller than the original string, your method should return the original string.
+    You can assume the string has only uppercase and lowercase letters (a - z).
+
+- My observation:
+
+
+- My approach to solve this problem:
+    - Go through each letters and use a hashmap to map letter and it's count
+    - Or, loop through each char and count same letter and add the letter and the count to a
+    dynamic array when it encounters with different letter.
+
+
+- Complexity:
+    - Time complexity: O(N + k^2) where N is the length of input string and k is the unique
+    occurrence of each letter. String concatenation takes O(N^2) time
+    - Space complexity: O(1)
+
+- Improvements/Comments:
+    - I should have used StringBuffer, that way the the overall runtime would be O(N)
