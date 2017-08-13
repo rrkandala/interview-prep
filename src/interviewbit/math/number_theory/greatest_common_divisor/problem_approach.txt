@@ -1,0 +1,39 @@
+- Problem: Greatest Common Divisor
+    Given 2 non negative integers m and n, find gcd(m, n)
+
+    GCD of 2 integers m and n is defined as the greatest integer g such that g is a divisor of both
+    m and n. Both m and n fit in a 32 bit signed integer.
+
+- Example:
+    m : 6
+    n : 9
+
+    GCD(m, n) : 3
+
+- Note:
+    DO NOT USE LIBRARY FUNCTIONS
+
+- My observation:
+    - gcd(15, 9)
+        15 % 9 = 6
+        9 % 6 = 3
+        6 % 3 = 0
+
+    - gcd(7, 3)
+        7 % 3 = 1
+
+
+- My approach to solve this problem:
+    - Find minimum and maximum of two integers
+    - Recursively find gcd
+        - Start from (max % min = remainder)
+        - Set 2 base cases where remainder is 1 (return 1) and remainder is 0(return the min)
+        - Each time update max = min, min = remainder as well.
+
+
+- Complexity:
+    - Time complexity:
+    - Space complexity:
+
+- Improvements/Comments
+    - TBM
