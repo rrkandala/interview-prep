@@ -1,0 +1,18 @@
+- Problem: Rotate Matrix
+    Given an image represented by an NxN matrix, where each pixel in the image is 4
+    bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
+
+- My 1st approach to solve this problem:
+    - Make a new 2D array for the output matrix.
+    - Loop through the original sD array vertically from bottom to up (inner loop).
+    - Loop through horizontally from left to right (outer loop).
+        - Inside the loop, get the value from original 2D array and then paste it to the output
+        2D array (in the normal order, from left to right, top to bottom).
+
+- Complexity:
+    - Time complexity: O(N^2)
+    - Space complexity: O(N^2)
+
+- Improvements/Comments
+    - In the worst case the space complexity is N^2 so that I should solve this problem in place.
+    - To do that, swap each side of the matrix in clockwise
