@@ -2,6 +2,42 @@
     Given an image represented by an NxN matrix, where each pixel in the image is 4
     bytes, write a method to rotate the image by 90 degrees. Can you do this in place?
 
+- My observation for second approach:
+    N = 3, loop through 1 layers (no need to rotate one item on center)
+
+    1 2 3      7 4 1
+    4 5 6  --> 8 5 2
+    7 8 9      3 9 6
+
+    N = 4, loop through 2 layers
+
+    10 11 12 13
+    20 21 22 23
+    30 31 32 33
+    40 41 42 43
+
+    N = 5, loop through 2 layers
+
+    10 11 12 13 14
+    20 21 22 23 24
+    30 31 32 33 34
+    40 41 42 43 44
+    50 51 52 53 54
+
+
+    N = 6, loop through 3 layers
+
+    10 11 12 13 14 15
+    20 21 22 23 24 25
+    30 31 32 33 34 35
+    40 41 42 43 44 45
+    50 51 52 53 54 55
+    60 61 62 63 64 65
+
+    To do this in place, rotate each side (left, top, right and bottom sides) from outer sides and
+    then go inner.
+
+
 - My 1st approach to solve this problem:
     - Make a new 2D array for the output matrix.
     - Loop through the original sD array vertically from bottom to up (inner loop).
@@ -16,3 +52,15 @@
 - Improvements/Comments
     - In the worst case the space complexity is N^2 so that I should solve this problem in place.
     - To do that, swap each side of the matrix in clockwise
+
+
+- My 2st approach to solve this problem:
+    - To solve this problem in place, loop from outer side to inner side,
+    and in inner loop, we swap values (one at a time from left to top side, from bottom to left,
+    from right to bottom, from top to right).
+    - Save one value of the top each time in a loop first so when we move value from top to right
+    side, we can assign the original value, not the new value from left side.
+
+  - Complexity:
+      - Time complexity: O(N^2)
+      - Space complexity: O(1)
