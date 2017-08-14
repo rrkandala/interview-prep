@@ -1,0 +1,25 @@
+- Problem: Reverse Integer
+    Reverse digits of an integer.
+
+- Example:
+    - x = 123,
+      return 321
+    - x = -123,
+      return -321
+
+- Note:
+    Return 0 if the result overflows and does not fit in a 32 bit signed integer
+
+- My approach to solve this problem:
+    - Loop through each digit.
+    - Get last digit by n % 10, the remaining digits by n / 10.
+    - Add the last digit to output integer each time in the loop by n * 10 + lastDigit.
+    - For overflow case, use long value to see if it's in range.
+
+- Complexity:
+    - Time complexity: O(N) where N is the number of digits
+    - Space complexity: O(1)
+
+- Improvements/Comments
+    - Instead of using long to deal with integer overflow, we can use Integer.MAX_VALUE / 10 in
+    a conditional statement.
