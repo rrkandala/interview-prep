@@ -15,7 +15,7 @@
 
 - Complexity:
     - Time complexity: O(N + k^2) where N is the length of input string and k is the unique
-    occurrence of each letter. String concatenation takes O(N^2) time
+    occurrence of each letter. String concatenation takes O(k^2) time
     - Space complexity: O(1)
 
 - Improvements/Comments:
