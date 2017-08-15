@@ -45,7 +45,9 @@
     change all the values in the first column to 0.
 
 - Complexity:
-    - Time complexity:
-    - Space complexity:
+    - Time complexity: O(M * N)
+    - Space complexity: O(1)
 
 - Improvements/Comments
+    - I have seen this problem on InterviewBit and I had O(M + N) space when I first solved it.
+    This time I used the matrix itself to store 0s so the my space complexity has improved.
