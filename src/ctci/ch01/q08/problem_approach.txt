@@ -2,17 +2,47 @@
     Write an algorithm such that if an element in an MxN matrix is 0, its entire row and column are
     set to 0.
 
-- Example:
-    EXAMPLE
-
-- Note:
-    NOTES
-
 - My observation:
+    Ex 1) 3x4 matrix
+    1 1 0 1        0 0 0 0
+    1 1 1 1   -->  1 1 0 1
+    1 1 1 1        1 1 0 1
 
+    R = false
+    C = true
+
+    X 1 0 1        0 0 0 0
+    1 1 0 1   -->  1 1 0 1
+    1 1 0 1        1 1 0 1
+
+    Ex 2) 5x7 matrix
+    1 1 1 1 1 1 1       1 1 0 1 1 1 0
+    1 1 0 1 1 1 1       0 0 0 0 0 0 0
+    1 1 1 1 1 1 1  -->  1 1 0 1 1 1 0
+    1 1 1 1 1 1 0       0 0 0 0 0 0 0
+    1 1 1 1 1 1 1       1 1 0 1 1 1 0
+
+    R = true
+    C = false
+
+    X 1 0 1 1 1 0       1 1 0 1 1 1 0
+    0 1 0 1 1 1 1       0 0 0 0 0 0 0
+    1 1 1 1 1 1 1  -->  1 1 0 1 1 1 0
+    0 1 1 1 1 1 0       0 0 0 0 0 0 0
+    1 1 1 1 1 1 1       1 1 0 1 1 1 0
 
 - My approach to solve this problem:
-
+    - Define two boolean values zeroInRow and zeroInCol, loop through the first row and first column and set those
+    boolean true if there exists 0.
+    - Use the matrix(the first row and first column) itself to store where any flip is needed.
+        - Go through the matrix (from (1, 1) to (M-1, N-1)) and if we see 0(let's say we found 0 at
+        (a, b), set corresponding first row and and first column values to zero. (0, b) and (a, 0)
+        are now zero.
+    - Go through the matrix again (from (1, 1) to (M-1, N-1)), and change value at (a, b) if the
+    corresponding values at first row or first column is zero.
+    - At the end, we change the first row and first row based on zeroInRow and zeroInCol.
+    If zeroInRow is true, change all the values in the first row to 0 and if zeroInCol is true,
+    change all the values in the first column to 0.
 
 - Complexity:
     - Time complexity:
