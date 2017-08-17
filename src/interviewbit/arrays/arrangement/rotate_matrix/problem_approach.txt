@@ -1,0 +1,33 @@
+- Problem: Rotate Matrix
+    You are given an n x n 2D matrix representing an image.
+
+    Rotate the image by 90 degrees (clockwise).
+
+    You need to do this in place.
+
+- Example:
+    If the array is
+
+    [
+        [1, 2],
+        [3, 4]
+    ]
+    Then the rotated array becomes:
+
+    [
+        [3, 1],
+        [4, 2]
+    ]
+
+- My approach to solve this problem:
+    - Loop from outer layer to inner layer
+    - In inner loop, go through each side of the matrix and swap value from left to top, bottom to
+    left, right to bottom and top to right.
+
+- Complexity:
+    - Time complexity: O(N^2)
+    - Space complexity: O(1)
+
+- Improvements/Comments
+    - I have solved this problem before on CtCI, so I could figure out the strategy to solve this
+    problem in place.
