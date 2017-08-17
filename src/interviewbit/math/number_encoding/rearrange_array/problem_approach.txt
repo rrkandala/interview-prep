@@ -1,0 +1,34 @@
+- Problem: Rearrange Array
+    Rearrange a given array so that Arr[i] becomes Arr[Arr[i]] with O(1) extra space.
+
+- Example:
+    Input : [1, 0]
+    Return : [0, 1]
+
+- Note:
+     Lets say N = size of the array. Then, following holds true :
+    * All elements in the array are in the range [0, N-1]
+    * N * N does not overflow for a signed integer
+
+- My approach to solve this problem:
+    - To have O(1) space, we need to store both old value (Arr[i]) and new value (Arr[Arr[i]]) in
+    the same spot.
+    - Loop through the array element and for each value, sum the old value (Arr[i]) and new value
+    (Arr[Arr[i]] % n) * n and store it at location i.
+    - Loop through the array element again, and at each value, devide it by n.
+
+- Complexity:
+    - Time complexity: O(N)
+    - Space complexity: O(1)
+
+- Improvements/Comments
+    - Initially I could not figure out how to store both old and new values at same location, so
+    I referred the solution approach to solve this problem.
+    - The key mathematical fact:
+        - combinedVal = oldVal + (newVal * sizeOfArray)
+            - oldVal and newVal have to be < sizeOfArray
+            - To retrieve oldVal:
+                - oldVal = combinedVal % sizeOfArray
+            - To retrieve newVal:
+                - newVal = combinedVal / sizeOfArray
+
