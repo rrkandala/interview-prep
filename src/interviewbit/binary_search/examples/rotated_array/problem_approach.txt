@@ -1,0 +1,33 @@
+- Problem: Rotated Array
+    Suppose a sorted array A is rotated at some pivot unknown to you beforehand.
+
+    (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+    Find the minimum element.
+
+    The array will not contain duplicates.
+
+- Note:
+    Also think about the case when there are duplicates. Does your current solution work?
+    How does the time complexity change?*
+
+- My observation:
+    - If we find the number of rotation to the array (call that X), the minimum element is at X.
+
+- My approach to solve this problem:
+    - First, check the first element and last element, and if firstElement <= lastElement, that
+    means the array is not rotated and therefore the first element is the minimum value.
+    - Use a binary search based approach. There are several cases to check.
+        - if middle value <= previous value and middle value <= next value, that means the value at
+        middle index is the min value.
+        - if middle value >= the first value, set first to middle + 1.
+        - if middle value <= the last value, set last middle - 1.
+
+- Complexity:
+    - Time complexity: O(log N) where N is the size of the array.
+    - Space complexity: O(1)
+
+- Improvements/Comments
+    - In order to avoid negative index, make use of modular arithmetic.
+        - next val from middle = (middle + 1) % n
+        - prev val from middle = (middle + n - 1) % n
