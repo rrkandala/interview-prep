@@ -1,0 +1,23 @@
+- Problem: Count Element Occurence
+    Given a sorted array of integers, find the number of occurrences of a given target value.
+    Your algorithm’s runtime complexity must be in the order of O(log n).
+    If the target is not found in the array, return 0
+
+- Example:
+    Given [5, 7, 7, 8, 8, 10] and target value 8,
+    return 2.
+
+- My approach to solve this problem:
+    - First find the first occurrence of the target value in the array using binary search, and
+    store the index at the first occurrence.
+    - Next, find the last occurrence of the target value in the array using binary search, and store
+    the index position at the last occurrence.
+    - The total number of occurrence is lastOccurrenceIndex - firstOccurrenceIndex + 1.
+
+- Complexity:
+    - Time complexity: O(logN) where N is the size of the list
+    - Space complexity: O(1)
+
+- Improvements/Comments
+    - The key on this problem is the fact that the array is "sorted". When asked a sorted list on
+    interviews, consider using binary search.
