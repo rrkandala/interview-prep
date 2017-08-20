@@ -1,0 +1,29 @@
+- Problem: Sorted Insert Position
+    Given a sorted array and a target value, return the index if the target is found. If not,
+    return the index where it would be if it were inserted in order.
+
+    You may assume no duplicates in the array.
+
+- Example:
+    [1,3,5,6], 5 → 2
+    [1,3,5,6], 2 → 1
+    [1,3,5,6], 7 → 4
+    [1,3,5,6], 0 → 0
+
+- My approach to solve this problem:
+    - Modify a binary search in a way that:
+        - If middle value is greater than target, check if first == last. If first == last, return
+        middle. Also check that the value at middle - 1 is less than the target, if it is return
+        middle.
+        - If middle value is less than target, check if first == last. If first == last, return
+        middle + 1.
+
+- Complexity:
+    - Time complexity: O(log N) where N is the size of the input array.
+    - Space complexity: O(1)
+
+- Improvements/Comments
+    - I do not need excessive checks in the binary search. When it goes through the algorithm
+    (din't find the target), it means that first is equals to last at that point and therefore
+    I could've just returned first because that is the index that the target is supposed to
+    be inserted.
