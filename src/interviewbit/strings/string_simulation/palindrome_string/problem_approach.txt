@@ -1,0 +1,23 @@
+- Problem: Palindrome String
+    Given a string, determine if it is a palindrome, considering only alphanumeric characters and
+    ignoring cases.
+
+- Example:
+    "A man, a plan, a canal: Panama" is a palindrome.
+
+    "race a car" is not a palindrome.
+
+    Return 0 / 1 ( 0 for false, 1 for true ) for this problem
+
+- My approach to solve this problem:
+    - Going through a loop, get the far left character(start) and far right character(end), and if
+    they are not the same return 0. If the char is not digit or number, update start and end. Loop
+    should end when start <= end.
+
+- Complexity:
+    - Time complexity: O(N) where N is the length of the input string
+    - Space complexity: O(1)
+
+- Improvements/Comments
+    - I could have solved this without using "isDigit()" or "isLetter()" methods. If we have a char
+    array, we can use "arr[i] >= 'a' && arr[i] <= 'z'" to check if the char is letter or not.
