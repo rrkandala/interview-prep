@@ -1,0 +1,25 @@
+- Problem: Square Root of Integer
+    Implement int sqrt(int x).
+
+    Compute and return the square root of x.
+
+    If x is not a perfect square, return floor(sqrt(x))
+
+- Example:
+    Input : 11
+    Output : 3
+
+- Note:
+    DO NOT USE SQRT FUNCTION FROM STANDARD LIBRARY
+
+- My observation:
+    Perfect square x can be expressed a = x / a since a * a = x
+
+- My approach to solve this problem:
+    - Use binary search to the number itself (a) to find the square root of a.
+    - The value for "first" is 1 and "last" is a. When middle = a / middle, that's a perfect square
+    so return middle. If a is not perfect square, return last.
+
+- Complexity:
+    - Time complexity: O(log N)
+    - Space complexity: O(1)
