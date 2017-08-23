@@ -1,0 +1,24 @@
+- Problem: Length Of Last Word
+    Given a string s consists of upper/lower-case alphabets and empty space characters ' ', return
+    the length of last word in the string.
+
+    If the last word does not exist, return 0.
+
+- Example:
+    Given s = "Hello World",
+
+    return 5 as length("World") = 5.
+
+    Please make sure you try to solve this problem without using library functions. Make sure you
+    only traverse the string once.
+
+- Note:
+    A word is defined as a character sequence consists of non-space characters only.
+
+- My approach to solve this problem:
+    - Since we just want the length of last word, we can traverse from the end of the input string
+    and return the count when we encounter with space.
+
+- Complexity:
+    - Time complexity: O(N) where N is the character length of input string.
+    - Space complexity: O(1)
