@@ -1,0 +1,35 @@
+- Problem: Longest Common Prefix
+    Write a function to find the longest common prefix string amongst an array of strings.
+
+    Longest common prefix for a pair of strings S1 and S2 is the longest string S which is the
+    prefix of both S1 and S2.
+
+    As an example, longest common prefix of "abcdefgh" and "abcefgh" is "abc".
+
+    Given the array of strings, you need to find the longest S which is the prefix of ALL the
+    strings in the array.
+
+- Example:
+    Given the array as:
+
+    [
+
+      "abcdefgh",
+
+      "aefghijk",
+
+      "abcefgh"
+
+    ]
+
+    The answer would be “a”.
+
+- My approach to solve this problem:
+    - First, find the minimum length string from the input array.
+    - Then, loop through the array till the minimum length and at each loop, go through all strings
+    in the array at specific index and check if a char at certain index is all same in array.
+
+- Complexity:
+    - Time complexity: O(S * N) where S is the length of the shortest string in the array and N is
+    the size of the array.
+    - Space complexity: O(1)
