@@ -1,0 +1,25 @@
+- Problem: Implement StrStr
+    Implement strStr().
+
+     strstr - locate a substring ( needle ) in a string ( haystack ).
+    Try not to use standard library string functions for this question.
+
+    Returns the index of the first occurrence of needle in haystack, or -1 if needle is not part of
+    haystack.
+
+- Note:
+    What should be the return value if the needle is empty?
+    What if both haystack and needle are empty?
+    For the purpose of this problem, assume that the return value should be -1 in both cases.
+
+- My approach to solve this problem:
+    - Loop through heystack and check if each char is same as the first character of needle.
+    - Once we find a needle first char, loop through needle and see if all the characters of needle
+    match with substrings of heystack.
+
+- Complexity:
+    - Time complexity: O(A * B) where A is a length of heystack and B is a length of needle
+    - Space complexity: O(1)
+
+- Improvements/Comments
+    - To make it linear time from quadratic time, we can use KMP algorithm.
